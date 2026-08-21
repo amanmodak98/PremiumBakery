@@ -1,5 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
+import { NavLink } from 'react-router-dom';
+
+const MotionNavLink = motion(NavLink);
 
 const Navbar = ({ isDarkMode, toggleTheme }) => {
     const [isScrolled, setIsScrolled] = useState(false);
@@ -14,11 +17,11 @@ const Navbar = ({ isDarkMode, toggleTheme }) => {
     }, []);
 
     const navLinks = [
-        { name: 'Home', href: '#' },
-        { name: 'Story', href: '#story' },
-        { name: 'Menu', href: '#menu' },
-        { name: 'Gallery', href: '#gallery' },
-        { name: 'Contact', href: '#contact' },
+        { name: 'Home', to: '/' },
+        { name: 'Menu', to: '/menu' },
+        { name: 'Gallery', to: '/gallery' },
+        { name: 'About', to: '/about' },
+        { name: 'Contact', to: '/contact' },
     ];
 
     return (
@@ -41,16 +44,16 @@ const Navbar = ({ isDarkMode, toggleTheme }) => {
                 {/* Desktop Links */}
                 <div className="hidden md:flex items-center space-x-8">
                     {navLinks.map((link, i) => (
-                        <motion.a
+                        <MotionNavLink
                             key={link.name}
-                            href={link.href}
+                            to={link.to}
                             initial={{ opacity: 0, y: -10 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ delay: 0.1 * i }}
                             className="font-medium text-sm lg:text-base hover:text-gold transition-colors"
                         >
                             {link.name}
-                        </motion.a>
+                        </MotionNavLink>
                     ))}
 
                     <button
@@ -88,14 +91,14 @@ const Navbar = ({ isDarkMode, toggleTheme }) => {
             >
                 <div className="flex flex-col p-6 space-y-4">
                     {navLinks.map((link) => (
-                        <a
+                        <NavLink
                             key={link.name}
-                            href={link.href}
+                            to={link.to}
                             onClick={() => setIsMenuOpen(false)}
                             className="text-lg font-medium hover:text-gold"
                         >
                             {link.name}
-                        </a>
+                        </NavLink>
                     ))}
                 </div>
             </motion.div>
