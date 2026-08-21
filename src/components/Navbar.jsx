@@ -38,7 +38,7 @@ const Navbar = ({ isDarkMode, toggleTheme }) => {
                     animate={{ opacity: 1, x: 0 }}
                     className="text-2xl md:text-3xl font-serif font-bold tracking-tighter text-gold"
                 >
-                    Priyanga
+                    Golden Crumbs
                 </motion.a>
 
                 {/* Desktop Links */}

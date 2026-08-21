@@ -28,10 +28,9 @@ const router = createBrowserRouter([
 
 export default function App() {
   const [loading, setLoading] = useState(true)
-  const [isDarkMode, setIsDarkMode] = useState(false)
 
   return (
-    <div className={isDarkMode ? 'dark' : ''}>
+    <div>
       <AnimatePresence>
         {loading && <LoadingScreen onComplete={() => setLoading(false)} />}
       </AnimatePresence>

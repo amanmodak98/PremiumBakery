@@ -50,6 +50,7 @@ const Footer = () => {
 
             <div className="max-w-7xl mx-auto mt-20 pt-8 border-t border-soft-brown/5 text-center text-xs text-soft-brown/40 dark:text-warm-white/30 uppercase tracking-widest">
                 &copy; {new Date().getFullYear()} Priyanga Luxury Bakery. All rights reserved.
+                <p>Designed &amp; Developed by <a href="https://www.infirexa.tech" target="_blank" rel="noopener noreferrer">Infirexa</a></p>
             </div>
         </footer>
     );
